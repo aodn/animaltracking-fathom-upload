@@ -1,4 +1,4 @@
-# Animal Tracking Fathom Upload Tool
+# Animal Tracking Fathom Upload tool for Zip files
 
 This tool is used for uploading zip files that contain Fathom CSV files to the Animal Tracking server via CLI.
 
@@ -8,19 +8,28 @@ This tool is used for uploading zip files that contain Fathom CSV files to the A
 
 This tool has been tested with Python 3+
 
+Clone this repo and change working directory to `animaltracking-fathom-upload` 
+
 ```bash
-pip install animaltracking-fathom-upload
+git clone https://github.com/aodn/animaltracking-fathom-upload.git
+cd animaltracking-fathom-upload
+```
+
+Then executing the following command to install required packages:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## Usage
 
-You can run the following command to upload a zip file:
+If you use the `main.py` file directly, you can run the following command to upload a zip file:
 
 ```bash
-animaltracking-fathom-upload -f <zip_file_path> -H <hostname>
+python animaltracking.py -f <zip_file_path> -H <hostname>
 ```
 
-e.g
+E.g
 ```bash
-animaltracking-fathom-upload -f /home/Downloads/MyZipFile.zip -H animaltracking.aodn.org.au
+python animaltracking.py -f /home/Downloads/MyZipFile.zip -H animaltracking.aodn.org.au
 ```
