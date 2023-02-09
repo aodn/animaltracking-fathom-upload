@@ -8,8 +8,8 @@ setup(
     description='Animal Tracking Fathom Upload Tool',
     author='Viet Nguyen',
     author_email='vh.nguyen@utas.edu.au',
-    url='https://github.com/aodn/animaltracking-zip-upload-tool',
-    download_url='https://github.com/aodn/animaltracking-zip-upload-tool/archive/v_010.tar.gz',
+    url='https://github.com/aodn/animaltracking-fathom-upload',
+    download_url='https://github.com/aodn/animaltracking-fathom-upload/archive/v_010.tar.gz',
     keywords=['fathom', 'upload', 'toolkit'],
     install_requires=[
         'argparse',
