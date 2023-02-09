@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-If you use the `main.py` file directly, you can run the following command to upload a zip file:
+If you use the `animaltracking.py` file directly, you can run the following command to upload a zip file:
 
 ```bash
 python animaltracking.py -f <zip_file_path> -H <hostname>
