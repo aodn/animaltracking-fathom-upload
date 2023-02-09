@@ -1,15 +1,15 @@
 from distutils.core import setup
 
 setup(
-    name='animaltracking-fathom-upload',
-    packages=['animaltracking-fathom-upload'],
-    version='0.1.1',
+    name='animaltracking',
+    packages=['animaltracking'],
+    version='0.1.2',
     license='GPL',
     description='Animal Tracking Fathom Upload Tool',
     author='Viet Nguyen',
     author_email='vh.nguyen@utas.edu.au',
     url='https://github.com/aodn/animaltracking-fathom-upload',
-    download_url='https://github.com/aodn/animaltracking-fathom-upload/archive/v_011.tar.gz',
+    download_url='https://github.com/aodn/animaltracking-fathom-upload/archive/v_012.tar.gz',
     keywords=['fathom', 'upload', 'toolkit'],
     install_requires=[
         'argparse',
