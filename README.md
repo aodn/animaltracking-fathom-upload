@@ -1,4 +1,4 @@
-# Animal Tracking Fathom Upload tool for Zip files
+# Animal Tracking Fathom Upload
 
 This tool is used for uploading zip files that contain Fathom CSV files to the Animal Tracking server via CLI.
 

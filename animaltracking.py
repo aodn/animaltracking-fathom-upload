@@ -53,41 +53,41 @@ def extract_csv_from_zip(zip_file):
 
 
 if __name__ == "__main__":
-    # Parse command line arguments
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-f', '--file', help='Path to file', required=True)
-    parser.add_argument('-H', '--host', help='Hostname', required=True)
-    args = parser.parse_args()
-    host = args.host
+
+    print("+------------------------------+")
+    print("+  AODN Fathom Zip Upload Tool +")
+    print("+------------------------------+")
+
+
+    print("\n==========Authenticating========")
+    host = input("Enter hostname: ")
     if host == "localhost":
         port = 5000
         protocol = "http"
     else:
         port = 443
         protocol = "https"
+    username = input("Enter your username: ")
+    password = getpass.getpass(prompt="Enter your password: ")
 
-    print("+------------------------------+")
-    print("+  AODN Fathom Zip Upload Tool +")
-    print("+------------------------------+")
+    url = f"{protocol}://{host}:{port}/api/auth/signin"
+    payload = {
+        "username": username,
+        "password": password
+    }
+    response = requests.post(url, json=payload)
 
-    if os.path.basename(args.file).endswith('.zip'):
-        print("\n==========Authenticating========")
-        username = input("Enter your username: ")
-        password = getpass.getpass(prompt="Enter your password: ")
+    if response.status_code == 200:
+        print("Successful login!")
 
-        url = f"{protocol}://{host}:{port}/api/auth/signin"
-        payload = {
-            "username": username,
-            "password": password
-        }
-        response = requests.post(url, json=payload)
-
-        if response.status_code == 200:
-            print("Successful login!")
-
+        print("\n==========ZIP File==============")
+        file = input("Enter path to zip file: ")
+        if (file.endswith(".zip") is False):
+            print("File must be a .zip file")
+        else:
             print("\n==========Loading===============")
-            extract_csv_from_zip(args.file)
-            print("File:", os.path.basename(args.file))
+            extract_csv_from_zip(file)
+            print("File:", os.path.basename(file))
             print("Total CSV files:", counter)
             print("Total detections:", len(detections))
             print("Total events:", len(events))
@@ -96,7 +96,7 @@ if __name__ == "__main__":
 
             # Begin upload
             begin_body = {
-                "fileName": os.path.basename(args.file),
+                "fileName": os.path.basename(file),
                 "receivers": receivers
             }
             headers = {
@@ -148,12 +148,7 @@ if __name__ == "__main__":
             else:
                 print("\n==========Results===============")
                 print(begin_data.json()["errors"][0])
-                exit(1)
-        else:
-            print("\n==========Results===============")
-            print("Login failed")
-            print(response.json()["errors"][0])
-            exit(1)
     else:
-        print("File must be a zip file")
-        exit(1)
+        print("\n==========Results===============")
+        print("Login failed")
+        print(response.json()["errors"][0])
