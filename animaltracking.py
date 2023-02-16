@@ -60,7 +60,9 @@ if __name__ == "__main__":
 
 
     print("\n==========Authenticating========")
-    host = input("Enter hostname: ")
+    host = input("Enter hostname: enter to use default (production)")
+    if host == "":
+        host = "animaltracking.aodn.org.au"
     if host == "localhost":
         port = 5000
         protocol = "http"
@@ -106,6 +108,7 @@ if __name__ == "__main__":
             if begin_data.status_code == 200:
 
                 print("\n==========Uploading=============")
+                print("\nNotes: please keep this terminal window open until the upload is complete.")
                 # Payload upload
                 chunkSize = 77
                 chunks = math.ceil(max(len(detections), len(events)) / chunkSize)
