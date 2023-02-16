@@ -108,6 +108,7 @@ if __name__ == "__main__":
             if begin_data.status_code == 200:
 
                 print("\n==========Uploading=============")
+                print("\nNotes: please keep this terminal window open until the upload is complete.")
                 # Payload upload
                 chunkSize = 77
                 chunks = math.ceil(max(len(detections), len(events)) / chunkSize)
