@@ -60,7 +60,9 @@ if __name__ == "__main__":
 
 
     print("\n==========Authenticating========")
-    host = input("Enter hostname: ")
+    host = input("Enter hostname: enter to use default (production)")
+    if host == "":
+        host = "animaltracking.aodn.org.au"
     if host == "localhost":
         port = 5000
         protocol = "http"
