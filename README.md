@@ -30,9 +30,10 @@ chmod +x animaltracking
 
 ### If you are using Windows, double click on `animaltracking.exe` that you've just downloaded.
 
-Note: you might be warned about the `.exe` file, click "Keep anyway" or "Continue".
+Note: you might be warned about the `.exe` file, click "Keep/Run anyway" or "Continue".
 
 ![image](https://user-images.githubusercontent.com/26201635/219268565-35860a53-3cfd-457b-957c-a3f3dda64749.png)
+![image](https://user-images.githubusercontent.com/26201635/219268921-4b1bcbbe-dfef-433a-982b-81f931e3b28b.png)
 
 
 ### If you use the `animaltracking.py` file directly:
