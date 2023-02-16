@@ -152,3 +152,11 @@ if __name__ == "__main__":
         print("\n==========Results===============")
         print("Login failed")
         print(response.json()["errors"][0])
+
+    if os.name == 'nt':
+        import keyboard
+        print('\nPress any keys to exit...')
+        event = keyboard.read_event()
+        if event.event_type == keyboard.KEY_DOWN:
+            pass
+    
