@@ -18,6 +18,9 @@ jobs:
       - name: Git Version
         id: version
         uses: codacy/git-version@2.7.1
+        with:
+        # The name of the release branch
+          release-branch: main
       
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.7.1
