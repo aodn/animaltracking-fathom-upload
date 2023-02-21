@@ -12,8 +12,9 @@ If you haven't downloaded it yet, please [download here](https://github.com/aodn
 
 ### If you use Linux/Mac, open a terminal:
 
-For Mac, click the Launchpad icon in the Dock, type Terminal in the search field, then click Terminal
-For Linux (Ubuntu) press Ctrl+Alt+T .
+For Mac, click the Launchpad icon in the Dock, type Terminal in the search field, then click Terminal.
+
+For Linux (Ubuntu) press Ctrl+Alt+T.
 
 Change working directory to where you downloaded the file `animaltracking`. 
 If the file is saved in your `Downloads` folder, execute the following:
@@ -29,6 +30,8 @@ chmod +x animaltracking
 ./animatracking
 ```
 
+You will be asked to log in with your Australian Animal Acoustic Telemetry Database credentials, then to drag and drop the ZIP file to uplaod.
+
 ### If you are using Windows, double click on `animaltracking.exe` that you've just downloaded.
 
 Note: you might be warned about the `.exe` file, click "Keep/Run anyway" or "Continue".
@@ -36,6 +39,7 @@ Note: you might be warned about the `.exe` file, click "Keep/Run anyway" or "Con
 ![image](https://user-images.githubusercontent.com/26201635/219268565-35860a53-3cfd-457b-957c-a3f3dda64749.png)
 ![image](https://user-images.githubusercontent.com/26201635/219268921-4b1bcbbe-dfef-433a-982b-81f931e3b28b.png)
 
+You will be asked to log in with your Australian Animal Acoustic Telemetry Database credentials, then to drag and drop the ZIP file to uplaod.
 
 ### If you use the `animaltracking.py` file directly:
 
@@ -54,7 +58,7 @@ Then execute the following command to install the required packages:
 pip install -r requirements.txt
 ```
 
-Finally, run the Python script:
+Finally, run the Python script and follow the prompts:
 
 ```bash
 python animaltracking.py
