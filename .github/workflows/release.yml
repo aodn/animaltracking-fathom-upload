@@ -23,15 +23,15 @@ jobs:
         uses: TheDoctor0/zip-release@0.7.1
         with:
           # Filename for archive
-          filename: animaltracking-fathom--zip-cli-${{ steps.version.outputs.version }}.zip
+          filename: animaltracking-fathom-zip-cli-${{ steps.version.outputs.version }}.zip
           # List of excluded files / directories
           exclusions: '*.git* *.vscode* *.docker* .editorconfig composer.*'
 
       - uses: ncipollo/release-action@v1
         with:
-          name : Animal Tracking Fathom Zip CLI Uploader ${{ steps.version.outputs.version }}
+          name : Animal Tracking Fathom Zip CLI Uploader - v${{ steps.version.outputs.version }}
           draft: true
-          artifacts: "animaltracking-fathom-zip-cli-${{ steps.version.outputs.version }}.zip"
+          artifacts: "animaltracking-fathom-zip-cli-v${{ steps.version.outputs.version }}.zip"
           artifactContentType: zip
           body : "To be Completed"
           tag : v${{ steps.version.outputs.version }}
