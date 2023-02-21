@@ -1,0 +1,37 @@
+name: Git Version
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}   # checkout the correct branch name
+          fetch-depth: 0                # fetch the whole repo history
+
+      - name: Git Version
+        id: version
+        uses: codacy/git-version@2.7.1
+          
+      - name: Zip Release
+        uses: TheDoctor0/zip-release@0.7.1
+        with:
+          # Filename for archive
+          filename: animaltracking-fathom--zip-cli-${{ steps.version.outputs.version }}.zip
+          # List of excluded files / directories
+          exclusions: '*.git* *.vscode* *.docker* .editorconfig composer.*'
+
+      - uses: ncipollo/release-action@v1
+        with:
+          name : Animal Tracking Fathom Zip CLI Uploader ${{ steps.version.outputs.version }}
+          draft: true
+          artifacts: "animaltracking-fathom-zip-cli-${{ steps.version.outputs.version }}.zip"
+          artifactContentType: zip
+          body : "To be Completed"
+          tag : v${{ steps.version.outputs.version }}
