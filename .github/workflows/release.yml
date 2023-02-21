@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  lint:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -18,12 +18,12 @@ jobs:
       - name: Git Version
         id: version
         uses: codacy/git-version@2.7.1
-          
+      
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.7.1
         with:
           # Filename for archive
-          filename: animaltracking-fathom-zip-cli-${{ steps.version.outputs.version }}.zip
+          filename: animaltracking-fathom-zip-cli-v${{ steps.version.outputs.version }}.zip
           # List of excluded files / directories
           exclusions: '*.git* *.vscode* *.docker* .editorconfig composer.*'
 
