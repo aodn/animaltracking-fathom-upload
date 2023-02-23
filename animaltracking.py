@@ -1,4 +1,5 @@
 import getpass
+from sys import exit
 from tqdm import tqdm
 import requests
 import zipfile
@@ -65,7 +66,10 @@ class AODNFathomZipUploader:
             print("\n==========Authenticating========")
             self.host = input(
                 "Press enter if you really want to upload your detections onto the Australian Animal Acoustic "
-                "Telemetry Database (animaltracking.aodn.org.au): ")
+                "Telemetry Database (animaltracking.aodn.org.au) or q then enter to quit: ")
+
+            if self.host == "q":
+                exit()
 
             if self.host == "localhost":
                 self.port = 5000
@@ -194,7 +198,7 @@ class AODNFathomZipUploader:
             print('\nPress any keys to exit...')
             event = keyboard.read_event()
             if event.event_type == keyboard.KEY_DOWN:
-                pass
+                exit()
 
 
 if __name__ == '__main__':
