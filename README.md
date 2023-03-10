@@ -39,7 +39,7 @@ Note: you might be warned about the `.exe` file, click "Keep/Run anyway" or "Con
 ![image](https://user-images.githubusercontent.com/26201635/219268565-35860a53-3cfd-457b-957c-a3f3dda64749.png)
 ![image](https://user-images.githubusercontent.com/26201635/219268921-4b1bcbbe-dfef-433a-982b-81f931e3b28b.png)
 
-You will be asked to log in with your Australian Animal Acoustic Telemetry Database credentials, then to drag and drop the ZIP file to uplaod.
+You will be asked to log in with your Australian Animal Acoustic Telemetry Database credentials, then to drag and drop the ZIP file to upload.
 
 ### If you use the `animaltracking.py` file directly:
 
