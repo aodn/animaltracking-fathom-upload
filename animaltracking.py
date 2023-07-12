@@ -39,7 +39,9 @@ class AODNFathomZipUploader:
                     "timestamp": f"{l[1]}.000" if "." not in l[1] else l[1],
                     "timestamp_corrected": f"{l[2]}.000" if "." not in l[2] else l[2],
                     "receiverName": self.parse_receiver(l[5], l[6]),
-                    "transmitterId": l[8]
+                    "transmitterId": l[8],
+                    "sensorValue": l[14],
+                    "sensorUnit": l[15]
                 }
                 self.detections.append(record)
             elif "DIAG" in l[0] and "_DESC" not in l[0]:
