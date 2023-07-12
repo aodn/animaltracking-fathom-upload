@@ -1,4 +1,4 @@
-argparse>=1.4.0
+argparse
 tqdm
 requests
 keyboard
